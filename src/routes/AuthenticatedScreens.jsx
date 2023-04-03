@@ -14,7 +14,7 @@ export default function AuthenticatedScreens() {
   return(
     <Tab.Navigator screenOptions={({route}) => ({
       headerStyle: {
-        height: 90,
+        height: 95,
         backgroundColor: '#080808'
       },
       headerTitle: 'World Cell',
@@ -24,7 +24,7 @@ export default function AuthenticatedScreens() {
       headerTitleAlign: 'center',
       headerLeft: () => (
         <TouchableOpacity>
-          <AntDesign name='search1' size={29} color='white' />
+          <AntDesign name='search1' size={38} color='white' />
         </TouchableOpacity>
       ),
       headerLeftContainerStyle: {
@@ -32,14 +32,14 @@ export default function AuthenticatedScreens() {
       },
       headerRight: () => (
         <TouchableOpacity>
-          <AntDesign name='shoppingcart' size={30} color='white' />
+          <AntDesign name='shoppingcart' size={40} color='white' />
         </TouchableOpacity>
       ),
       headerRightContainerStyle: {
         marginRight: 15
       },
       tabBarStyle: {
-        height: 60,
+        height: 65,
         backgroundColor: '#080808'
       },
       tabBarIcon: ({focused}) => {
@@ -48,13 +48,13 @@ export default function AuthenticatedScreens() {
         if (route.name === 'Home') {
           return (
             <TouchableOpacity>
-              <AntDesign name='home' size={30} color={color} />
+              <AntDesign name='home' size={40} color={color} />
             </TouchableOpacity>
           )
         } else if (route.name === 'User') {
           return (
             <TouchableOpacity>
-              <AntDesign name='user' size={30} color={color} />
+              <AntDesign name='user' size={40} color={color} />
             </TouchableOpacity>
           )
         }
