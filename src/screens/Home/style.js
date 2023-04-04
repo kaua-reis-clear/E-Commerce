@@ -25,6 +25,9 @@ const style = StyleSheet.create({
   image: {
     width: 260,
     height: 300,
+  },
+  carousel:{
+    marginTop: 15
   }
 });
 

@@ -1,11 +1,11 @@
 import React from 'react';
-import { View, Text, FlatList } from 'react-native';
+import { View, Text, FlatList, Dimensions } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Filters, ScalableImage } from '../../components'
 import style from './style'
 import { Entypo } from '@expo/vector-icons';
 import { products } from '../../mock/index'
-import Image from 'react-native-scalable-image';
+import { getWidth } from '../../utils';
 
 export default function Home() {
   return (
@@ -16,9 +16,10 @@ export default function Home() {
         <Text style={style.title}>Lançamentos</Text>
       </View>
       <FlatList
+      style={style.carousel}
       horizontal
       data={products}
-      renderItem={({item}) => <Image source={{uri: item.image}} width={300}/>}
+      renderItem={({item}) => <ScalableImage source={{uri: item.image}} width={getWidth(30, '-')}/>}
       />
     </SafeAreaView>
   );
