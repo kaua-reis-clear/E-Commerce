@@ -6,7 +6,7 @@ export default function IndexIndicator({length, current}) {
   function getIndicatorItems() {
     return Array.from({length}).map((_,index) => {
       return (
-        <View style={style.indicatorItem(current == index ? true : false)}/>
+        <View key={index} style={style.indicatorItem(current == index ? true : false)}/>
       );
     });
   }
