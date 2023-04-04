@@ -4,7 +4,8 @@ const style = StyleSheet.create({
   image: (width, height) => ({
     backgroundColor: 'white',
     width,
-    height
+    height,
+    marginBottom: 10
   })
 });
 

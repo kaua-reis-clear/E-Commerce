@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { View, FlatList, Text, TouchableOpacity } from 'react-native';
 import style from './style';
-import { ScalableImage, IndexIndicator } from '../'
+import { ScalableImage, IndexIndicator, Stars } from '../'
 import { getWidth } from '../../utils';
 
 export default function Carousel({data}) {
@@ -35,8 +35,11 @@ export default function Carousel({data}) {
           <TouchableOpacity style={style.productArea} activeOpacity={0.8}>
             <ScalableImage source={{ uri: item.image }} width={getWidth(30, '-')} />
             <View style={style.productInfos}>
-              <Text style={style.model}>{item.model}</Text>
-              <View style={style.row}>
+              <View style={style.row('start')}>
+                <Text style={style.model}>{item.model}</Text>
+                <Stars length={5} rating={4.7} size={21}/>
+              </View>
+              <View style={style.row('end')}>
                 <Text style={style.price}>R$ {item.price.toFixed(2).toString().replace('.', ',')}</Text>
                 <Text style={style.sales}>{item.sales} vendidos</Text>
               </View>

@@ -14,13 +14,12 @@ const style = StyleSheet.create({
   model: {
     fontSize: 25,
     color: '#FFF',
-    marginTop: 10
   },
-  row: {
+  row: (align) => ({
     flexDirection: 'row',
-    alignItems: 'flex-end',
+    alignItems: `flex-${align}`,
     justifyContent: 'space-between'
-  },
+  }),
   price: {
     fontSize: 30,
     color: '#007AFF',
