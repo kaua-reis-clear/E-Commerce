@@ -26,9 +26,6 @@ const style = StyleSheet.create({
     width: 260,
     height: 300,
   },
-  carousel:{
-    marginTop: 15
-  }
 });
 
 export default style;
