@@ -6,7 +6,7 @@ import { MotorolaLogo, SamsungLogo } from '../'
 
 export default function Filters() {
   return (
-    <View>
+    <View style={style.filtersArea}>
       <ScrollView horizontal>
         <TouchableOpacity style={style.filterArea(false)}>
           <MaterialCommunityIcons name="truck-delivery" size={50} color="white" />

@@ -4,7 +4,7 @@ const style = StyleSheet.create({
   container: {
     backgroundColor: '#090F2C',
     flex: 1,
-    paddingHorizontal: 15
+    paddingHorizontal: 15,
   },
   titleArea: {
     flexDirection: 'row',
@@ -20,7 +20,7 @@ const style = StyleSheet.create({
     color: '#FFF',
     fontSize: 20,
     fontWeight: 'bold',
-    marginLeft: 5,
+    marginLeft: 10,
   },
   image: {
     width: 260,

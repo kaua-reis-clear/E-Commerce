@@ -1,21 +1,28 @@
-import React, { useRef, useState } from 'react';
-import { View, Text, FlatList, TouchableOpacity } from 'react-native';
+import React from 'react';
+import { View, Text } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Filters, ScalableImage, IndexIndicator, Carousel } from '../../components'
+import { Filters, Carousel, DiscountIcon } from '../../components'
 import style from './style'
-import { Entypo } from '@expo/vector-icons';
+import { Entypo, FontAwesome5 } from '@expo/vector-icons';
 import { products } from '../../mock/index'
-import { getWidth } from '../../utils';
+import { ScrollView } from 'react-native-gesture-handler';
 
 export default function Home() {
   return (
-    <SafeAreaView style={style.container}>
-      <Filters />
-      <View style={style.titleArea}>
-        <Entypo name="new" size={30} color="white" />
-        <Text style={style.title}>Lançamentos</Text>
-      </View>
-      <Carousel data={products}/>
-    </SafeAreaView>
+    <View style={style.container}>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <Filters />
+        <View style={style.titleArea}>
+          <FontAwesome5 name="hotjar" size={30} color="white" />
+          <Text style={style.title}>Em Alta</Text>
+        </View>
+        <Carousel data={products}/>
+        <View style={style.titleArea}>
+          <DiscountIcon width={35} height={35} color="white"/>
+          <Text style={style.title}>Promoções</Text>
+        </View>
+        <Carousel data={products}/>
+      </ScrollView>
+    </View>
   );
 }

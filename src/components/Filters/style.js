@@ -1,9 +1,12 @@
 import { StyleSheet } from "react-native";
 
 const style = StyleSheet.create({
+  filtersArea: {
+    marginTop: 20
+  },
   filterArea: (last) => ({
     marginRight: last ? 0 : 20,
-    alignItems: 'center'
+    alignItems: 'center',
   }),
   text: {
     color: '#FFF',
