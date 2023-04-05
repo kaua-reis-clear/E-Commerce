@@ -2,7 +2,8 @@ import { StyleSheet } from "react-native";
 
 const style = StyleSheet.create({
   filtersArea: {
-    marginTop: 20
+    marginTop: 20,
+    marginBottom: 30
   },
   filterArea: (last) => ({
     marginRight: last ? 0 : 20,

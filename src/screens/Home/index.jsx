@@ -10,7 +10,7 @@ import { ScrollView } from 'react-native-gesture-handler';
 export default function Home() {
   return (
     <View style={style.container}>
-      <ScrollView showsVerticalScrollIndicator={false}>
+      <ScrollView showsVerticalScrollIndicator={false} style={{paddingBottom: 50}}>
         <Filters />
         <View style={style.titleArea}>
           <FontAwesome5 name="hotjar" size={30} color="white" />
@@ -21,7 +21,7 @@ export default function Home() {
           <DiscountIcon width={35} height={35} color="white"/>
           <Text style={style.title}>Promoções</Text>
         </View>
-        <Carousel data={products}/>
+        <Carousel data={products} multi/>
       </ScrollView>
     </View>
   );

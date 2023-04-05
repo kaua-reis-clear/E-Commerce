@@ -8,7 +8,6 @@ const style = StyleSheet.create({
   },
   titleArea: {
     flexDirection: 'row',
-    marginTop: 30,
     alignItems: 'center',
     paddingRight: 20,
     paddingBottom: 10,
