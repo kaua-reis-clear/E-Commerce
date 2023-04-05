@@ -37,7 +37,7 @@ export default function Carousel({data}) {
             <View style={style.productInfos}>
               <View style={style.row('start')}>
                 <Text style={style.model}>{item.model}</Text>
-                <Stars length={5} rating={4.7} size={21}/>
+                <Stars length={5} rating={item.rating} size={21}/>
               </View>
               <View style={style.row('end')}>
                 <Text style={style.price}>R$ {item.price.toFixed(2).toString().replace('.', ',')}</Text>
