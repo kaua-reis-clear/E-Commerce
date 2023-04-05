@@ -1,16 +1,14 @@
 import React from 'react';
 import { CardStyleInterpolators, createStackNavigator } from "@react-navigation/stack";
-import { Home, Cart } from '../../../screens'
+import { Home, Product, Cart } from '../../../screens'
 import { TouchableOpacity } from 'react-native';
-import { AntDesign } from '@expo/vector-icons'
+import { AntDesign, Ionicons } from '@expo/vector-icons'
 
 export default function HomeTab() {
   const Stack = createStackNavigator()
   
   return (
-    <Stack.Navigator screenOptions={({navigation}) => ({
-      gestureEnabled: true,
-      gestureDirection: 'vertical',
+    <Stack.Navigator screenOptions={({route, navigation}) => ({
       headerStyle: {
         height: 95,
         backgroundColor: '#080808'
@@ -20,11 +18,15 @@ export default function HomeTab() {
         color: 'white'
       },
       headerTitleAlign: 'center',
-      headerLeft: () => (
+      headerLeft: () => route.name === 'Home' ? (
         <TouchableOpacity>
           <AntDesign name='search1' size={38} color='white' />
         </TouchableOpacity>
-      ),
+      ) : route.name === 'Product' ? (
+        <TouchableOpacity onPress={() => navigation.goBack()}>
+          <Ionicons name="arrow-back" size={38} color="white" />
+        </TouchableOpacity>
+      ) : null,
       headerLeftContainerStyle: {
         marginLeft: 15
       },
@@ -40,6 +42,7 @@ export default function HomeTab() {
       cardStyleInterpolator: CardStyleInterpolators.forVerticalIOS
     })}>
       <Stack.Screen name='Home' component={Home}/>
+      <Stack.Screen name='Product' component={Product}/>
       <Stack.Screen name='Cart' component={Cart}/>
     </Stack.Navigator>
   )
