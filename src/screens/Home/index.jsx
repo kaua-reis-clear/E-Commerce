@@ -1,9 +1,8 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
 import { Filters, Carousel, DiscountIcon } from '../../components'
 import style from './style'
-import { Entypo, FontAwesome5 } from '@expo/vector-icons';
+import { FontAwesome5 } from '@expo/vector-icons';
 import { products } from '../../mock/index'
 import { ScrollView } from 'react-native-gesture-handler';
 
