@@ -6,5 +6,6 @@ import IndexIndicator from './IndexIndicator';
 import Carousel from './Carousel';
 import DiscountIcon from './DiscountIcon';
 import Stars from './Stars';
+import CartPlusIcon from './CartPlusIcon';
 
-export { Filters, MotorolaLogo, SamsungLogo, ScalableImage, IndexIndicator, Carousel, DiscountIcon, Stars };
+export { Filters, MotorolaLogo, SamsungLogo, ScalableImage, IndexIndicator, Carousel, DiscountIcon, Stars, CartPlusIcon };
