@@ -9,7 +9,7 @@ const style = StyleSheet.create({
     width: 10,
     height: 10,
     borderRadius: 5,
-    backgroundColor: current ? '#007AFF' : '#BBB',
+    backgroundColor: current ? '#007AFF' : '#AAA',
     marginHorizontal: 4
   })
 });

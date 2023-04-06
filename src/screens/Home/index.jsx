@@ -17,7 +17,7 @@ export default function Home({navigation}) {
         </View>
         <Carousel data={products} navigation={navigation} style={style.carousel} />
         <View style={style.titleArea}>
-          <DiscountIcon width={35} height={35} color="white"/>
+          <DiscountIcon size={35} color="white"/>
           <Text style={style.title}>Promoções</Text>
         </View>
         <Carousel data={products} multi navigation={navigation} style={style.carousel} />

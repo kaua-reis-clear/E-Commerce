@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import { getFocusedRouteNameFromRoute } from '@react-navigation/native'
 import { HomeTab } from './Tabs';
 import { AntDesign } from '@expo/vector-icons';
 import { TouchableOpacity } from 'react-native-gesture-handler';
@@ -13,7 +14,8 @@ export default function AuthenticatedScreens() {
       headerShown: false,
       tabBarStyle: {
         height: 65,
-        backgroundColor: '#080808'
+        backgroundColor: '#080808',
+        display: getFocusedRouteNameFromRoute(route) === 'Product' ? 'none' : 'flex'
       },
       tabBarIcon: ({focused}) => {
         let color = focused ? '#007AFF' : 'white';

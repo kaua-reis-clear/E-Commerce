@@ -7,7 +7,8 @@ const style = StyleSheet.create({
     left: (size * 17) / 40,
     zIndex: 100,
     marginBottom: -(size * 30) / 40,
-    color
+    color,
+    fontWeight: '600'
   })
 });
 

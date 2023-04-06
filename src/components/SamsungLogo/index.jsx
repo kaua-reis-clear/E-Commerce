@@ -1,10 +1,10 @@
 import * as React from "react";
 import Svg, { G, Path } from "react-native-svg";
-const SamsungLogo = ({width, height, color}) => (
+const SamsungLogo = ({size, color}) => (
   <Svg
     xmlns="http://www.w3.org/2000/svg"
-    width={width}
-    height={height}
+    width={size}
+    height={size}
     viewBox="0 0 512.000000 256.000000"
     preserveAspectRatio="xMidYMid meet"
   >
