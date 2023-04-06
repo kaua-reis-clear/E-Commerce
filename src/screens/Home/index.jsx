@@ -10,7 +10,7 @@ import { ScrollView } from 'react-native-gesture-handler';
 export default function Home({navigation}) {
   return (
     <View style={style.container}>
-      <ScrollView showsVerticalScrollIndicator={false} style={{paddingBottom: 50}}>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <Filters />
         <View style={style.titleArea}>
           <FontAwesome5 name="hotjar" size={30} color="white" />

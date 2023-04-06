@@ -4,7 +4,7 @@ import style from './style';
 import { ScalableImage, IndexIndicator, Stars } from '../'
 import { getWidth } from '../../utils';
 
-export default function Carousel({navigation, multi, data, gallery}) {
+export default function Carousel({navigation, multi, data, gallery, ...props}) {
   const [current, setCurrent] = useState(0);
 
   const viewabilityConfig = {
@@ -25,7 +25,8 @@ export default function Carousel({navigation, multi, data, gallery}) {
   ]);
 
   return (
-    <View style={style.carousel(gallery)}>
+    <View style={style.carousel(gallery)} {...props.style}>
+      {props.children}
       <FlatList
         horizontal
         showsHorizontalScrollIndicator={false}
@@ -55,7 +56,7 @@ export default function Carousel({navigation, multi, data, gallery}) {
         viewabilityConfigCallbackPairs={multi ? null : viewabilityConfigCallbackPairs.current}
       />
       {!multi && (
-        <IndexIndicator length={data.length} current={current} />
+        <IndexIndicator length={data.length} current={current} style={style.indexIndicator(gallery)}/>
       )}
     </View>
   );

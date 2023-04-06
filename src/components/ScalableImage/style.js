@@ -5,7 +5,6 @@ const style = StyleSheet.create({
     backgroundColor: 'white',
     width,
     height,
-    marginBottom: 10
   })
 });
 

@@ -10,6 +10,7 @@ const style = StyleSheet.create({
   },
   productInfos: multi => ({
     paddingHorizontal: multi ? 2 : 10,
+    marginTop: 7
   }),
   model: multi => ({
     fontSize: multi ? 16 : 25,
@@ -32,7 +33,10 @@ const style = StyleSheet.create({
   }),
   separator: {
     marginHorizontal: 5
-  }
+  },
+  indexIndicator: gallery => ({
+    marginTop: gallery ? 7 : 20
+  })
 });
 
 export default style;

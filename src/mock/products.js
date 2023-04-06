@@ -7,6 +7,7 @@ const products = [
         'https://images.samsung.com/is/image/samsung/p6pim/br/sm-a546elgdzto/gallery/br-galaxy-a54-5g-sm-a546-sm-a546elgdzto-535806788?$730_584_PNG$',
         'https://images.samsung.com/is/image/samsung/p6pim/br/sm-a546elgdzto/gallery/br-galaxy-a54-5g-sm-a546-sm-a546elgdzto-535806774?$684_547_PNG$',
         'https://images.samsung.com/is/image/samsung/p6pim/br/sm-a546elgdzto/gallery/br-galaxy-a54-5g-sm-a546-sm-a546elgdzto-535806777?$684_547_PNG$',
+        'https://images.samsung.com/is/image/samsung/p6pim/br/sm-a546elgdzto/gallery/br-galaxy-a54-5g-sm-a546-sm-a546elgdzto-535806773?$684_547_PNG$'
 
       ],
       sales: 2000,

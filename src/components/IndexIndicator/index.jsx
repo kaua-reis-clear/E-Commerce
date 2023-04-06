@@ -2,7 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 import style from './style';
 
-export default function IndexIndicator({length, current}) {
+export default function IndexIndicator({length, current, ...props}) {
   function getIndicatorItems() {
     return Array.from({length}).map((_,index) => {
       return (
@@ -12,7 +12,7 @@ export default function IndexIndicator({length, current}) {
   }
 
   return (
-    <View style={style.indicatorArea}>
+    <View style={style.indicatorArea} {...props.style}>
       {getIndicatorItems()}
     </View>
   );

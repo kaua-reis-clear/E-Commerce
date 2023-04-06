@@ -5,8 +5,13 @@ const style = StyleSheet.create({
     backgroundColor: '#090F2C',
     flex: 1,
   },
+  carousel: {
+    backgroundColor: 'white',
+    paddingTop: 70,
+    paddingBottom: 15
+},
   content: {
-    paddingHorizontal: 15
+    paddingHorizontal: 15,
   },
   model: {
     fontSize: 40,

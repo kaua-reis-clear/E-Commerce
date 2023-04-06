@@ -13,9 +13,12 @@ export default function HomeTab() {
         height: 95,
         backgroundColor: '#080808'
       },
-      headerTitle: 'World Cell',
+      headerTransparent: route.name === 'Product' ? true : false,
+      headerTitle: 'WORLD CELL',
       headerTitleStyle: {
-        color: 'white'
+        color: route.name === 'Product' ? '#090F2C' : '#FFF',
+        fontSize: 23,
+        fontWeight: 'bold'
       },
       headerTitleAlign: 'center',
       headerLeft: () => route.name === 'Home' ? (
@@ -24,7 +27,7 @@ export default function HomeTab() {
         </TouchableOpacity>
       ) : route.name === 'Product' ? (
         <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Ionicons name="arrow-back" size={38} color="white" />
+          <Ionicons name="arrow-back" size={38} color={route.name === 'Product'? '#090F2C' : '#FFF'} />
         </TouchableOpacity>
       ) : null,
       headerLeftContainerStyle: {
@@ -32,7 +35,7 @@ export default function HomeTab() {
       },
       headerRight: () => (
         <TouchableOpacity onPress={() => navigation.navigate({ name: 'Cart' })}>
-          <AntDesign name='shoppingcart' size={40} color='white' />
+          <AntDesign name='shoppingcart' size={40} color={route.name === 'Product'? '#090F2C' : '#FFF'} />
         </TouchableOpacity>
       ),
       headerRightContainerStyle: {
