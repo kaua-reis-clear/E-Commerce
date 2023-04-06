@@ -16,12 +16,12 @@ export default function Home({navigation}) {
           <FontAwesome5 name="hotjar" size={30} color="white" />
           <Text style={style.title}>Em Alta</Text>
         </View>
-        <Carousel data={products} navigation={navigation}/>
+        <Carousel data={products} navigation={navigation} style={style.carousel} />
         <View style={style.titleArea}>
           <DiscountIcon width={35} height={35} color="white"/>
           <Text style={style.title}>Promoções</Text>
         </View>
-        <Carousel data={products} multi navigation={navigation} />
+        <Carousel data={products} multi navigation={navigation} style={style.carousel} />
       </ScrollView>
     </View>
   );

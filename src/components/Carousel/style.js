@@ -3,7 +3,6 @@ import { StyleSheet } from 'react-native';
 const style = StyleSheet.create({
   carousel: (gallery) => ({
     marginTop: gallery ? 0 : 15,
-    marginBottom: 30,
   }),
   productArea: {
     

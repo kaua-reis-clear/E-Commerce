@@ -2,17 +2,16 @@ import React, { useState, useRef, useCallback } from 'react';
 import { View, FlatList, Text, TouchableOpacity } from 'react-native';
 import style from './style';
 import { ScalableImage, IndexIndicator, Stars } from '../'
-import { getWidth } from '../../utils';
+import { getWidth, toReal } from '../../utils';
 
 export default function Carousel({navigation, multi, data, gallery, ...props}) {
   const [current, setCurrent] = useState(0);
 
   const viewabilityConfig = {
-    itemVisiblePercentThreshold: 0,
+    itemVisiblePercentThreshold: 50,
   }
 
   function onViewableItemsChanged({viewableItems}) {
-    console.log('VIEWABLE: ', viewableItems)
     let index = viewableItems[1] ? viewableItems[1].index : viewableItems[0].index;
 
     setCurrent(index);
@@ -26,7 +25,6 @@ export default function Carousel({navigation, multi, data, gallery, ...props}) {
 
   return (
     <View style={style.carousel(gallery)} {...props.style}>
-      {props.children}
       <FlatList
         horizontal
         showsHorizontalScrollIndicator={false}
@@ -41,7 +39,7 @@ export default function Carousel({navigation, multi, data, gallery, ...props}) {
                   <Stars length={5} rating={item.rating} size={multi ? 13 : 21} color='#007AFF'/>
                 </View>
                 <View style={style.row('end')}>
-                  <Text style={style.price(multi)}>R$ {item.price.toFixed(2).toString().replace('.', ',')}</Text>
+                  <Text style={style.price(multi)}>{toReal(item.price)}</Text>
                   <Text style={style.sales(multi)}>{item.sales} vendidos</Text>
                 </View>
               </View>
@@ -58,6 +56,7 @@ export default function Carousel({navigation, multi, data, gallery, ...props}) {
       {!multi && (
         <IndexIndicator length={data.length} current={current} style={style.indexIndicator(gallery)}/>
       )}
+      {props.children}
     </View>
   );
 }

@@ -21,10 +21,9 @@ const style = StyleSheet.create({
     fontWeight: 'bold',
     marginLeft: 10,
   },
-  image: {
-    width: 260,
-    height: 300,
-  },
+  carousel: {
+    marginBottom: 30
+  }
 });
 
 export default style;
