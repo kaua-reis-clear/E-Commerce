@@ -1,18 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
 import style from './style';
-import { Carousel, Stars, CartPlusIcon, DiscountIcon } from '../../components';
+import { Carousel, Stars, CartPlusIcon, DiscountIcon, FullscreenModal } from '../../components';
 import { Ionicons, AntDesign, MaterialCommunityIcons, Feather } from '@expo/vector-icons';
 import { toReal } from '../../utils';
+import { ECommerceContext } from '../../contexts/StoreContext';
 
 export default function Product({route}) {
   const product = route.params.product;
   const [favorited, setFavorited] = useState(false);
+  const [image, setImage] = useState(null);
+  const { fullscreen, setFullscreen } = useContext(ECommerceContext)
 
   return (
     <View style={style.container}>
       <ScrollView showsVerticalScrollIndicator={false}>
-        <Carousel data={product.images} gallery style={style.carousel}>
+        <Carousel data={product.images} gallery style={style.carousel} setFullscreen={setFullscreen} setImage={setImage}>
           <TouchableOpacity style={style.share}>
             <Ionicons name='share-social' size={30} color='#090F2C' />
           </TouchableOpacity>
@@ -25,7 +28,7 @@ export default function Product({route}) {
             <Text style={style.sales}>{product.sales} vendidos</Text>
             <View style={style.row(false)}>
               <Stars length={5} rating={product.rating} size={20} color='#007AFF' />
-              <Text style={style.rating}>{product.rating}</Text>
+              <Text style={style.rating}>{product.rating.toFixed(1)}</Text>
             </View>
           </View>
           <Text style={style.model}>{product.model}</Text>
@@ -46,7 +49,10 @@ export default function Product({route}) {
               <MaterialCommunityIcons name={product.freeDelivery ? 'truck-check' : 'truck-delivery'} size={36} color={product.freeDelivery ? '#007AFF' : '#FFF'} />
               <Text style={style.delivery(product.freeDelivery)}>{product.freeDelivery ? 'Frete Grátis' : 'R$ 15,00 de frete'}</Text>
             </View>
-            <Text style={style.deliveryTime}>Chega em 15 dias</Text>
+            <View style={style.row(false, true)}>
+              <Ionicons name='md-location-outline' size={35} color={'#FFF'} />
+              <Text style={style.deliveryTime}>Chega em 15 dias</Text>
+            </View>
           </View>
         </View>
       </ScrollView>
@@ -60,6 +66,9 @@ export default function Product({route}) {
           <Text style={style.buyText('#FFF')}>COMPRAR AGORA</Text>
         </TouchableOpacity>
       </View>
+      {fullscreen && (
+        <FullscreenModal image={image}/>
+      )}
     </View>
   );
 }

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Image } from 'react-native';
+import { Image, Animated } from 'react-native';
 import style from './style';
 
 export default function ScalableImage({source, width, handleError, height, ...props}) {
@@ -41,11 +41,11 @@ export default function ScalableImage({source, width, handleError, height, ...pr
 
   if (dim) {
     return (
-      <Image source={source} style={style.image(dim.width, dim.height)} onError={(e) => {
+      <Animated.Image source={source} style={[style.image(dim.width, dim.height), props.style]} onError={(e) => {
         if(handleError) {
           handleError(e.nativeEvent.error)
         }
-      }} {...props}/>
+      }}/>
     );
   }
   return null;

@@ -4,7 +4,7 @@ import style from './style';
 import { ScalableImage, IndexIndicator, Stars } from '../'
 import { getWidth, toReal } from '../../utils';
 
-export default function Carousel({navigation, multi, data, gallery, ...props}) {
+export default function Carousel({navigation, multi, data, gallery, setFullscreen, setImage, ...props}) {
   const [current, setCurrent] = useState(0);
 
   const viewabilityConfig = {
@@ -23,6 +23,11 @@ export default function Carousel({navigation, multi, data, gallery, ...props}) {
     },
   ]);
 
+  function openFullscreen(image) {
+    setFullscreen(true);
+    setImage(image);
+  }
+
   return (
     <View style={style.carousel(gallery)} {...props.style}>
       <FlatList
@@ -30,7 +35,7 @@ export default function Carousel({navigation, multi, data, gallery, ...props}) {
         showsHorizontalScrollIndicator={false}
         data={data}
         renderItem={({ item }) => (
-          <TouchableOpacity style={style.productArea} activeOpacity={0.8} onPress={() => gallery ? null : navigation.navigate('Product', {product: item})}>
+          <TouchableOpacity style={style.productArea} activeOpacity={0.8} onPress={() => gallery ? openFullscreen(item) : navigation.navigate('Product', {product: item})}>
             <ScalableImage source={{ uri: gallery ? item : item.images[0] }} width={gallery ? getWidth() : getWidth(multi ? 2 : 30, multi ? '/' : '-')} />
             {!gallery && (
               <View style={style.productInfos(multi)}>
