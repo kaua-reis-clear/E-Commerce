@@ -1,4 +1,4 @@
-import { getWidth } from "./getSize";
+import { getWidth, getHeight } from "./getSize";
 import toReal from "./formatToReal";
 
-export { getWidth, toReal };
+export { getWidth, getHeight, toReal };
