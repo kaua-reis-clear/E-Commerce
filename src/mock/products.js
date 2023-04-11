@@ -14,7 +14,8 @@ const products = [
       sales: 2000,
       rating: 4.75,
       freeDelivery: true,
-      oldPrice: 3399
+      oldPrice: 3399,
+      sellerId: 1
     },
     {
       id: 2,
@@ -30,6 +31,7 @@ const products = [
       sales: 1254,
       rating: 4,
       freeDelivery: true,
+      sellerId: 1
     },
     {
       id: 3,
@@ -45,7 +47,8 @@ const products = [
       sales: 458,
       rating: 5,
       freeDelivery: false,
-      oldPrice: 1529.10
+      oldPrice: 1529.10,
+      sellerId: 2
     },
     {
       id: 4,
@@ -61,7 +64,8 @@ const products = [
       sales: 1482,
       rating: 3.5,
       freeDelivery: true,
-      oldPrice: 2339.10
+      oldPrice: 2339.10,
+      sellerId: 3
     }
 ]
 

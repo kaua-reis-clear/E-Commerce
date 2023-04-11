@@ -37,25 +37,26 @@ const style = StyleSheet.create({
   },
   sales: {
     fontSize: 14,
-    color: '#FFF'
+    color: '#FFF',
+    marginLeft: 5
   },
   model: {
     fontSize: 25,
     color: '#FFF',
     marginTop: 10,
-    marginBottom: 3
+    marginBottom: 5
   },
   discountIcon: {
     marginBottom: 6,
     marginRight: 5
   },
   price: {
-    fontSize: 36,
+    fontSize: 30,
     color: '#007AFF',
     fontWeight: 'bold'
   },
   oldPrice: {
-    fontSize: 20,
+    fontSize: 24,
     color: '#AAA',
     textDecorationLine: 'line-through',
     marginBottom: 6
@@ -63,15 +64,15 @@ const style = StyleSheet.create({
   installment: {
     fontSize: 14,
     color: '#FFF',
-    marginBottom: 10
+    marginBottom: 20
   },
   delivery: free => ({
-    fontSize: 16,
+    fontSize: 15,
     color: free ? '#007AFF' : '#FFF',
     marginLeft: 5
   }),
   deliveryTime: {
-    fontSize: 16,
+    fontSize: 15,
     color: '#FFF'
   },
   footer: {
@@ -79,7 +80,7 @@ const style = StyleSheet.create({
     paddingHorizontal: 15,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    paddingBottom: 5,
+    paddingBottom: 20,
     paddingTop: 8
   },
   buyButton: color => ({
@@ -93,7 +94,37 @@ const style = StyleSheet.create({
     fontSize: 13,
     fontWeight: 'bold',
     color
-  })
+  }),
+  sellerArea: {
+    marginTop: 20
+  },
+  sellerImage: {
+    borderRadius: 30,
+    marginRight: 5
+  },
+  sellerInfos: {
+    flex: 1
+  },
+  sellerName: {
+    fontSize: 20,
+    color: '#FFF',
+    marginBottom: 5,
+  },
+  sellerTotalSales: {
+    fontSize: 12,
+    color: '#FFF',
+    marginLeft: 2,
+  },
+  sellerRating: {
+    fontSize: 12,
+    color: '#FFF',
+    marginLeft: 2
+  },
+  sellerLocation: {
+    fontSize: 12,
+    color: '#FFF',
+    marginLeft: 2
+  }
 });
 
 export default style;

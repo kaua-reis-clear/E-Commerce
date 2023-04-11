@@ -1,13 +1,15 @@
 import React, { useState, useContext } from 'react';
 import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
 import style from './style';
-import { Carousel, Stars, CartPlusIcon, DiscountIcon, FullscreenModal } from '../../components';
+import { Carousel, Stars, CartPlusIcon, DiscountIcon, FullscreenModal, ScalableImage } from '../../components';
 import { Ionicons, AntDesign, MaterialCommunityIcons, Feather } from '@expo/vector-icons';
-import { toReal } from '../../utils';
+import { getWidth, toReal } from '../../utils';
 import { ECommerceContext } from '../../contexts/StoreContext';
+import { sellers } from '../../mock';
 
 export default function Product({route}) {
   const product = route.params.product;
+  const seller = sellers.find(seller => seller.id == product.sellerId);
   const [favorited, setFavorited] = useState(false);
   const [image, setImage] = useState(null);
   const { fullscreen, setFullscreen } = useContext(ECommerceContext)
@@ -25,7 +27,10 @@ export default function Product({route}) {
         </Carousel>
         <View style={style.content}>
           <View style={style.row(true)}>
-            <Text style={style.sales}>{product.sales} vendidos</Text>
+            <View style={style.row(false, true)}>
+              <MaterialCommunityIcons name='package-variant' size={24} color='#007AFF' />
+              <Text style={style.sales}>{product.sales} vendidos</Text>
+            </View>
             <View style={style.row(false)}>
               <Stars length={5} rating={product.rating} size={20} color='#007AFF' />
               <Text style={style.rating}>{product.rating.toFixed(1)}</Text>
@@ -35,7 +40,7 @@ export default function Product({route}) {
           <View style={style.row(true)}>
             <View style={style.row(false)}>
               {product.oldPrice && (
-                <DiscountIcon size={36} color='#007AFF' style={style.discountIcon}/>
+                <DiscountIcon size={33} color='#007AFF' style={style.discountIcon}/>
               )}
               <Text style={style.price}>{toReal(product.price)}0</Text>
             </View>            
@@ -44,16 +49,30 @@ export default function Product({route}) {
             )}
           </View>
           <Text style={style.installment}>em 12x {toReal(product.price / 12)} sem juros</Text>
-          <View style={style.row(true, true)}>
-            <View style={style.row(false, true)}>
-              <MaterialCommunityIcons name={product.freeDelivery ? 'truck-check' : 'truck-delivery'} size={36} color={product.freeDelivery ? '#007AFF' : '#FFF'} />
+          <View style={[style.row(false, true), ]}>
+              <MaterialCommunityIcons name={product.freeDelivery ? 'truck-check' : 'truck-delivery'} size={35} color={product.freeDelivery ? '#007AFF' : '#FFF'} />
               <Text style={style.delivery(product.freeDelivery)}>{product.freeDelivery ? 'Frete Grátis' : 'R$ 15,00 de frete'}</Text>
             </View>
-            <View style={style.row(false, true)}>
-              <Ionicons name='md-location-outline' size={35} color={'#FFF'} />
-              <Text style={style.deliveryTime}>Chega em 15 dias</Text>
+          <TouchableOpacity style={[style.row(false, true), style.sellerArea]} activeOpacity={0.6}>
+            <ScalableImage source={{uri: 'https://cdn-icons-png.flaticon.com/512/5231/5231019.png'}} width={60} style={style.sellerImage}/>
+            <View style={style.sellerInfos}>
+              <Text style={style.sellerName}>My Cell</Text>
+              <View style={style.row(true, false)}>
+                <View style={style.row(true, false)}>
+                <MaterialCommunityIcons name='package-variant' size={getWidth(22, '/')} color='#007AFF' />
+                  <Text style={style.sellerTotalSales}>{seller.totalSales} vendas</Text>
+                </View>
+                <View style={style.row(true, false)}>
+                  <Stars length={5} rating={4.7} size={getWidth(26, '/')} color='#007AFF'/>
+                  <Text style={style.sellerRating}>{seller.rating}</Text>
+                </View>
+                <View style={style.row(true, false)}>
+                  <Ionicons name='location-sharp' size={getWidth(22, '/')} color='#007AFF' />
+                  <Text style={style.sellerLocation}>{seller.location}</Text>
+                </View>
+              </View>
             </View>
-          </View>
+          </TouchableOpacity>
         </View>
       </ScrollView>
       <View style={style.footer}>
