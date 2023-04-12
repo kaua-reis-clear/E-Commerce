@@ -1,14 +1,15 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useContext } from 'react';
 import { Animated, View } from 'react-native';
 import { PanGestureHandler } from 'react-native-gesture-handler';
 import { getHeight, getWidth } from '../../utils';
 import style from './style';
+import { ECommerceContext } from '../../contexts/StoreContext';
 
-export default function BottomSheet({show, onDismiss, children}) {
+export default function BottomSheet({children}) {
+  const { showModal, setShowModal } = useContext(ECommerceContext);
   const bottomSheetHeight = getHeight(0.75, '*');
-  const deviceWidth = getWidth();
   const bottom = useRef(new Animated.Value(-bottomSheetHeight)).current;
-  const [open, setOpen] = useState(show)
+  const [open, setOpen] = useState(showModal)
   
   function onGesture(event) {
     if(event.nativeEvent.translationY > 0) {
@@ -18,15 +19,15 @@ export default function BottomSheet({show, onDismiss, children}) {
 
   function onGestureEnd(event) {
     if(event.nativeEvent.translationY > (bottomSheetHeight / 2)) {
-      onDismiss();
+      setShowModal(false);
     } else {
       bottom.setValue(0);
     }
   }
   
   useEffect(() => {
-    if(show) {
-      setOpen(show);
+    if(showModal) {
+      setOpen(showModal);
       Animated.timing(bottom, {
         toValue: 0,
         duration: 300,

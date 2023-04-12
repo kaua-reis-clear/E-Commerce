@@ -9,5 +9,6 @@ import Stars from './Stars';
 import CartPlusIcon from './CartPlusIcon';
 import FullscreenModal from './FullscreenModal';
 import BottomSheet from './BottomSheet';
+import Review from './Review';
 
-export { Filters, MotorolaLogo, SamsungLogo, ScalableImage, IndexIndicator, Carousel, DiscountIcon, Stars, CartPlusIcon, FullscreenModal, BottomSheet };
+export { Filters, MotorolaLogo, SamsungLogo, ScalableImage, IndexIndicator, Carousel, DiscountIcon, Stars, CartPlusIcon, FullscreenModal, BottomSheet, Review };

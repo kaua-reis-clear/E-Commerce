@@ -4,10 +4,13 @@ export const ECommerceContext = createContext();
 
 export default function ECommerceProvider({children}) {
   const [fullscreen, setFullscreen] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   const values = {
     fullscreen,
-    setFullscreen
+    setFullscreen,
+    showModal,
+    setShowModal
   }
 
   return (

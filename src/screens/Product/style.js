@@ -106,12 +106,41 @@ const style = StyleSheet.create({
     marginLeft: 2
   },
   section: {
-    marginTop: 25
+    marginTop: 25,
+  },
+  sectionHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingBottom: 5,
+    borderBottomWidth: 1,
+    borderColor: '#007AFF',
   },
   sectionTitle: {
     color: '#FFF',
     fontSize: 20,
     marginBottom: 4,
+  },
+  detailSection: {
+    paddingHorizontal: 15,
+    marginBottom: 20
+  },
+  detailTitle: {
+    fontWeight: 'bold',
+    fontSize: 17,
+    color: '#FFF',
+    marginBottom: 10
+  },
+  detailRow: {
+    paddingBottom: 8,
+    marginBottom: 8,
+    borderBottomWidth: 1,
+    borderColor: '#FFF'
+  },
+  detailInfo: {
+    flexWrap: 'wrap',
+    maxWidth: '50%',
+    color: '#FFF'
   },
   reviewsRatingValue: {
     fontSize: 12,
@@ -125,12 +154,8 @@ const style = StyleSheet.create({
     marginRight: 10,
     marginLeft: 5
   },
-  reviewUserImage: {
-    borderRadius: 30
-  },
-  reviewUserName: {
-    fontSize: 10,
-    color: '#FFF'
+  reviewsArea: {
+    marginTop: 10
   },
   footer: {
     width: '100%',
@@ -152,28 +177,6 @@ const style = StyleSheet.create({
     fontWeight: 'bold',
     color
   }),
-  
-  detailSection: {
-    paddingHorizontal: 15,
-    marginBottom: 20
-  },
-  detailTitle: {
-    fontWeight: 'bold',
-    fontSize: 17,
-    color: '#FFF',
-    marginBottom: 10
-  },
-  detailRow: {
-    paddingBottom: 8,
-    marginBottom: 8,
-    borderBottomWidth: 1,
-    borderColor: '#FFF'
-  },
-  detailInfo: {
-    flexWrap: 'wrap',
-    maxWidth: '50%',
-    color: '#FFF'
-  }
 });
 
 export default style;
