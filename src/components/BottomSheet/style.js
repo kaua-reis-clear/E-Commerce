@@ -7,7 +7,7 @@ const style = StyleSheet.create({
     left: 0,
     right: 0,
     zIndex: 102,
-    backgroundColor: '#FFF',
+    backgroundColor: '#090F2C',
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
     overflow: 'hidden',
@@ -20,7 +20,7 @@ const style = StyleSheet.create({
   line: {
     width: 75,
     height: 4,
-    backgroundColor: 'grey',
+    backgroundColor: '#FFF',
     alignSelf: 'center',
     borderRadius: 2,
     marginTop: 15,

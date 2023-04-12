@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import style from "./style";
 import { FontAwesome } from '@expo/vector-icons';
 
-export default function Stars({length, rating, size, color}) {
+export default function Stars({length, rating, size, color, ...props}) {
   function getStars() {
     return Array.from({length}).map((_, index) => {
       if (index + 1 <= rating) {
@@ -23,7 +23,7 @@ export default function Stars({length, rating, size, color}) {
   }
 
   return (
-    <View style={style.stars}>
+    <View style={[style.stars, props.style]}>
       {getStars()}
     </View>
   );

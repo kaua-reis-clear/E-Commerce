@@ -13,9 +13,10 @@ const products = [
       ],
       sales: 2000,
       rating: 4.75,
+      totalRatings: 345,
       freeDelivery: true,
       oldPrice: 3399,
-      sellerId: 1
+      sellerId: 1,
     },
     {
       id: 2,
@@ -30,6 +31,7 @@ const products = [
       ],
       sales: 1254,
       rating: 4,
+      totalRatings: 210,
       freeDelivery: true,
       sellerId: 1
     },
@@ -46,6 +48,7 @@ const products = [
       ],
       sales: 458,
       rating: 5,
+      totalRatings: 89,
       freeDelivery: false,
       oldPrice: 1529.10,
       sellerId: 2
@@ -63,6 +66,7 @@ const products = [
       ],
       sales: 1482,
       rating: 3.5,
+      totalRatings: 556,
       freeDelivery: true,
       oldPrice: 2339.10,
       sellerId: 3

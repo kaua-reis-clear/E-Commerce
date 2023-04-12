@@ -22,7 +22,7 @@ export default function BottomSheet({show, onDismiss, children}) {
     } else {
       bottom.setValue(0);
     }
-  } 
+  }
   
   useEffect(() => {
     if(show) {
@@ -35,7 +35,7 @@ export default function BottomSheet({show, onDismiss, children}) {
     } else {
       Animated.timing(bottom, {
         toValue: -bottomSheetHeight,
-        duration: 300,
+        duration: 150,
         useNativeDriver: false
       }).start(() => {
         setOpen(false);

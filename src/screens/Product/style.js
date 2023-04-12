@@ -22,15 +22,15 @@ const style = StyleSheet.create({
     left: getWidth(45, '-'),
     marginBottom: -30
   },
-  row: (space, center) => ({
+  row: (space = 'flex-start', center = 'flex-end') => ({
     flexDirection: 'row',
-    justifyContent: space ? 'space-between' : 'flex-start',
-    alignItems: center ? 'center' : 'flex-end'
+    justifyContent: space,
+    alignItems: center
   }),
   content: {
     paddingHorizontal: 15,
   },
-  rating: {
+  ratingValue: {
     fontSize: 14,
     color: '#FFF',
     marginLeft: 5
@@ -59,7 +59,7 @@ const style = StyleSheet.create({
     fontSize: 24,
     color: '#AAA',
     textDecorationLine: 'line-through',
-    marginBottom: 6
+    marginBottom: 4
   },
   installment: {
     fontSize: 14,
@@ -75,26 +75,6 @@ const style = StyleSheet.create({
     fontSize: 15,
     color: '#FFF'
   },
-  footer: {
-    width: '100%',
-    paddingHorizontal: 15,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    paddingBottom: 20,
-    paddingTop: 8
-  },
-  buyButton: color => ({
-    alignItems: 'center',
-    backgroundColor: color,
-    padding: 5,
-    borderRadius: 10,
-    width: 170
-  }),
-  buyText: color => ({
-    fontSize: 13,
-    fontWeight: 'bold',
-    color
-  }),
   sellerArea: {
     marginTop: 20
   },
@@ -124,6 +104,75 @@ const style = StyleSheet.create({
     fontSize: 12,
     color: '#FFF',
     marginLeft: 2
+  },
+  section: {
+    marginTop: 25
+  },
+  sectionTitle: {
+    color: '#FFF',
+    fontSize: 20,
+    marginBottom: 4,
+  },
+  reviewsRatingValue: {
+    fontSize: 12,
+    color: '#007AFF',
+    marginLeft: 5,
+    marginRight: 10
+  },
+  reviewsTotalRatings: {
+    fontSize: 12,
+    color: '#007AFF',
+    marginRight: 10,
+    marginLeft: 5
+  },
+  reviewUserImage: {
+    borderRadius: 30
+  },
+  reviewUserName: {
+    fontSize: 10,
+    color: '#FFF'
+  },
+  footer: {
+    width: '100%',
+    paddingHorizontal: 15,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingBottom: 20,
+    paddingTop: 8
+  },
+  buyButton: color => ({
+    alignItems: 'center',
+    backgroundColor: color,
+    padding: 5,
+    borderRadius: 10,
+    width: 170
+  }),
+  buyText: color => ({
+    fontSize: 13,
+    fontWeight: 'bold',
+    color
+  }),
+  
+  detailSection: {
+    paddingHorizontal: 15,
+    marginBottom: 20
+  },
+  detailTitle: {
+    fontWeight: 'bold',
+    fontSize: 17,
+    color: '#FFF',
+    marginBottom: 10
+  },
+  detailRow: {
+    paddingBottom: 8,
+    marginBottom: 8,
+    borderBottomWidth: 1,
+    borderColor: '#FFF'
+  },
+  detailInfo: {
+    flexWrap: 'wrap',
+    maxWidth: '50%',
+    color: '#FFF'
   }
 });
 
