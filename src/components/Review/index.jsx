@@ -9,7 +9,7 @@ export default function Review({review}) {
       <View style={style.row}>
         <Stars length={5} rating={review.rating} size={15} color='#FFF' />
         <View style={style.dot}/>
-        <Text style={style.reviewUserName}>{review.user.name}</Text>
+        <Text style={style.reviewUserName}>{review.username}</Text>
         <View style={style.dot}/>
         <Text style={style.reviewDate}>{review.date}</Text>
       </View>

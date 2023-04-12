@@ -1,11 +1,11 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { View, Text, ScrollView, TouchableOpacity, FlatList, TouchableWithoutFeedback } from 'react-native';
 import style from './style';
-import { Carousel, Stars, CartPlusIcon, DiscountIcon, FullscreenModal, ScalableImage, BottomSheet, Review } from '../../components';
+import { Carousel, Stars, CartPlusIcon, DiscountIcon, FullscreenModal, ScalableImage, BottomSheet, Review, Question } from '../../components';
 import { Ionicons, AntDesign, MaterialCommunityIcons, Feather, MaterialIcons } from '@expo/vector-icons';
 import { getWidth, toReal } from '../../utils';
 import { ECommerceContext } from '../../contexts/StoreContext';
-import { sellers, productDetails, reviews } from '../../mock';
+import { sellers, productDetails, reviews, questions } from '../../mock';
 
 export default function Product({route}) {
   const product = route.params.product;
@@ -112,15 +112,35 @@ export default function Product({route}) {
             </TouchableOpacity>
             <FlatList
             horizontal
+            showsHorizontalScrollIndicator={false}
             style={style.reviewsArea}
             data={reviews}
             renderItem={({item}) => <Review review={item}/>}
             keyExtractor={review => review.id}
+            ItemSeparatorComponent={<View style={style.separator}/>}
+            />
+          </View>
+          <View style={[style.section, {marginBottom: 20}]}>
+            <TouchableOpacity style={style.sectionHeader}>
+              <Text style={style.sectionTitle}>Dúvidas</Text>
+              <View style={style.row('flex-start')}>
+                <Ionicons name='chatbubbles' size={15} color='#007AFF' />
+                <Text style={style.reviewsTotalRatings}>{product.totalRatings} perguntas</Text>
+                <MaterialIcons name='arrow-forward-ios' size={15} color='#FFF' />
+              </View>
+            </TouchableOpacity>
+            <FlatList
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            style={style.reviewsArea}
+            data={questions}
+            renderItem={({item}) => <Question question={item}/>}
+            keyExtractor={question => question.id}
+            ItemSeparatorComponent={<View style={style.separator}/>}
             />
           </View>
         </View>
       </ScrollView>
-      
       <View style={style.footer}>
         <TouchableOpacity style={style.buyButton('#FFF')}>
           <CartPlusIcon size={35} color='#007AFF' />

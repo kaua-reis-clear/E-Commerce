@@ -157,6 +157,9 @@ const style = StyleSheet.create({
   reviewsArea: {
     marginTop: 10
   },
+  separator: {
+    marginHorizontal: 8,
+  },
   footer: {
     width: '100%',
     paddingHorizontal: 15,

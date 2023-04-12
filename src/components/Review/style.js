@@ -5,7 +5,6 @@ const style = StyleSheet.create({
   reviewArea: {
     justifyContent: 'space-between',
     maxWidth: getWidth(30, '-'),
-    paddingHorizontal: 5,
   },
   review: (align) => ({
     alignItems: align,
