@@ -12,14 +12,14 @@ export default function Product({route}) {
   const seller = sellers.find(seller => seller.id == product.sellerId);
   const [favorited, setFavorited] = useState(false);
   const [image, setImage] = useState(null);
-  const { fullscreen, setFullscreen, setShowModal } = useContext(ECommerceContext);
+  const { fullscreen, setFullscreen, setShowModal, addToCart, removeFromCart } = useContext(ECommerceContext);
 
   useEffect(() => {
     setShowModal(false)
   }, [])
 
   function getDetails() {
-    let productDetail = productDetails.find(productDetail => productDetail.productId == product.id);
+    let productDetail = productDetails[0];
 
     return productDetail.details.map((detail, index) => (
       <View style={style.detailSection} key={index}>
@@ -73,7 +73,7 @@ export default function Product({route}) {
               <MaterialCommunityIcons name={product.freeDelivery ? 'truck-check' : 'truck-delivery'} size={35} color={product.freeDelivery ? '#007AFF' : '#FFF'} />
               <Text style={style.delivery(product.freeDelivery)}>{product.freeDelivery ? 'Frete Grátis' : 'R$ 15,00 de frete'}</Text>
             </View>
-          <TouchableOpacity style={[style.row('flex-start', 'center'), style.sellerArea]} activeOpacity={0.6}>
+          <TouchableOpacity style={[style.row('flex-start', 'center'), style.sellerArea]} activeOpacity={0.8}>
             <ScalableImage source={{uri: 'https://cdn-icons-png.flaticon.com/512/5231/5231019.png'}} width={60} style={style.sellerImage}/>
             <View style={style.sellerInfos}>
               <Text style={style.sellerName}>My Cell</Text>
@@ -142,7 +142,7 @@ export default function Product({route}) {
         </View>
       </ScrollView>
       <View style={style.footer}>
-        <TouchableOpacity style={style.buyButton('#FFF')}>
+        <TouchableOpacity style={style.buyButton('#FFF')} activeOpacity={0.8} onPress={() => addToCart(product)}>
           <CartPlusIcon size={35} color='#007AFF' />
           <Text style={style.buyText('#007AFF')}>ADICIONE AO CARRINHO</Text>
         </TouchableOpacity>

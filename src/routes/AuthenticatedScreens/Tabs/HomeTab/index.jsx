@@ -1,14 +1,15 @@
 import React, { useContext } from 'react';
 import { CardStyleInterpolators, createStackNavigator } from "@react-navigation/stack";
-import { Home, Product, Cart } from '../../../screens'
-import { TouchableOpacity } from 'react-native';
+import { Home, Product, Cart } from '../../../../screens'
+import { Text, TouchableOpacity, View } from 'react-native';
 import { AntDesign, Ionicons } from '@expo/vector-icons'
 import * as NavigationBar from 'expo-navigation-bar';
-import { ECommerceContext } from '../../../contexts/ECommerceContext';
+import { ECommerceContext } from '../../../../contexts/ECommerceContext';
+import style from './style';
 
 export default function HomeTab() {
   const Stack = createStackNavigator();
-  const { fullscreen, setFullscreen } = useContext(ECommerceContext)
+  const { fullscreen, setFullscreen, state } = useContext(ECommerceContext)
   
   return (
     <Stack.Navigator screenOptions={({route, navigation}) => {
@@ -42,7 +43,10 @@ export default function HomeTab() {
         },
         headerRight: () => !fullscreen && (
           <TouchableOpacity onPress={() => navigation.navigate({ name: 'Cart' })}>
-            <AntDesign name='shoppingcart' size={40} color={route.name === 'Product'? '#090F2C' : '#FFF'} />
+            <View style={style.cartButtonArea(route.name === 'Product' ? '#090F2C' : '#FFF')}>
+              <Text style={style.cartButtonText(route.name === 'Product' ? '#FFF' : '#090F2C')}>{state.totalProducts}</Text>
+            </View>
+            <AntDesign name='shoppingcart' size={40} color={route.name === 'Product' ? '#090F2C' : '#FFF'} />
           </TouchableOpacity>
         ),
         headerRightContainerStyle: {
