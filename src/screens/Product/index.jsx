@@ -38,10 +38,10 @@ export default function Product({route}) {
     <View style={style.container}>
       <ScrollView showsVerticalScrollIndicator={false} onTouchStart={() => setShowModal(false)}>
         <Carousel data={product.images} gallery style={style.carousel} setFullscreen={setFullscreen} setImage={setImage}>
-          <TouchableOpacity style={style.share}>
+          <TouchableOpacity activeOpacity={0.8} style={style.share}>
             <Ionicons name='share-social' size={30} color='#090F2C' />
           </TouchableOpacity>
-          <TouchableOpacity style={style.heart} onPress={() => setFavorited(current => !current)}>
+          <TouchableOpacity activeOpacity={0.8} style={style.heart} onPress={() => setFavorited(current => !current)}>
             <AntDesign name={favorited ? 'heart' : 'hearto'} size={30} color='#090F2C' />
           </TouchableOpacity>
         </Carousel>
@@ -73,7 +73,7 @@ export default function Product({route}) {
               <MaterialCommunityIcons name={product.freeDelivery ? 'truck-check' : 'truck-delivery'} size={35} color={product.freeDelivery ? '#007AFF' : '#FFF'} />
               <Text style={style.delivery(product.freeDelivery)}>{product.freeDelivery ? 'Frete Grátis' : 'R$ 15,00 de frete'}</Text>
             </View>
-          <TouchableOpacity style={[style.row('flex-start', 'center'), style.sellerArea]} activeOpacity={0.8}>
+          <TouchableOpacity activeOpacity={0.8} style={[style.row('flex-start', 'center'), style.sellerArea]} >
             <ScalableImage source={{uri: 'https://cdn-icons-png.flaticon.com/512/5231/5231019.png'}} width={60} style={style.sellerImage}/>
             <View style={style.sellerInfos}>
               <Text style={style.sellerName}>My Cell</Text>
@@ -94,13 +94,13 @@ export default function Product({route}) {
             </View>
           </TouchableOpacity>
           <View style={style.section}>
-            <TouchableOpacity style={style.sectionHeader} onPress={() => setShowModal(true)}>
+            <TouchableOpacity activeOpacity={0.8} style={style.sectionHeader} onPress={() => setShowModal(true)}>
               <Text style={style.sectionTitle}>Detalhes</Text>
               <MaterialIcons name='arrow-forward-ios' size={15} color='#FFF' />
             </TouchableOpacity>
           </View>
           <View style={style.section}>
-            <TouchableOpacity style={style.sectionHeader}>
+            <TouchableOpacity activeOpacity={0.8} style={style.sectionHeader}>
               <Text style={style.sectionTitle}>Avaliações</Text>
               <View style={style.row('flex-start')}>
                 <Stars length={1} rating={1} size={15} color='#007AFF'/>
@@ -121,7 +121,7 @@ export default function Product({route}) {
             />
           </View>
           <View style={[style.section, {marginBottom: 20}]}>
-            <TouchableOpacity style={style.sectionHeader}>
+            <TouchableOpacity activeOpacity={0.8} style={style.sectionHeader}>
               <Text style={style.sectionTitle}>Dúvidas</Text>
               <View style={style.row('flex-start')}>
                 <Ionicons name='chatbubbles' size={15} color='#007AFF' />
@@ -142,11 +142,11 @@ export default function Product({route}) {
         </View>
       </ScrollView>
       <View style={style.footer}>
-        <TouchableOpacity style={style.buyButton('#FFF')} activeOpacity={0.8} onPress={() => addToCart(product)}>
+        <TouchableOpacity activeOpacity={0.8} style={style.buyButton('#FFF')}  onPress={() => addToCart(product)}>
           <CartPlusIcon size={35} color='#007AFF' />
           <Text style={style.buyText('#007AFF')}>ADICIONE AO CARRINHO</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={style.buyButton('#007AFF')}>
+        <TouchableOpacity activeOpacity={0.8} style={style.buyButton('#007AFF')}>
           <Feather name='shopping-bag' size={35} color='#FFF' />
           <Text style={style.buyText('#FFF')}>COMPRAR AGORA</Text>
         </TouchableOpacity>

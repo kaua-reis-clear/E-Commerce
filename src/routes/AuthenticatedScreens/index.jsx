@@ -21,13 +21,13 @@ export default function AuthenticatedScreens() {
 
         if (route.name === 'HomeTab') {
           return (
-            <TouchableOpacity>
+            <TouchableOpacity activeOpacity={0.8}>
               <AntDesign name='home' size={40} color={color} />
             </TouchableOpacity>
           )
         } else if (route.name === 'UserTab') {
           return (
-            <TouchableOpacity>
+            <TouchableOpacity activeOpacity={0.8}>
               <AntDesign name='user' size={40} color={color} />
             </TouchableOpacity>
           )

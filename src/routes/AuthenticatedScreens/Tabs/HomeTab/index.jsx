@@ -30,11 +30,11 @@ export default function HomeTab() {
         },
         headerTitleAlign: 'center',
         headerLeft: () => route.name === 'Home' ? (
-          <TouchableOpacity>
+          <TouchableOpacity activeOpacity={0.8}>
             <AntDesign name='search1' size={38} color='white' />
           </TouchableOpacity>
         ) : route.name === 'Product' ? (
-          <TouchableOpacity onPress={() => fullscreen ? setFullscreen(false) : navigation.goBack()}>
+          <TouchableOpacity activeOpacity={0.8} onPress={() => fullscreen ? setFullscreen(false) : navigation.goBack()}>
             <Ionicons name={fullscreen ? 'close' : 'arrow-back'} size={38} color={fullscreen ? '#FFF' : '#090F2C'} />
           </TouchableOpacity>
         ) : null,
@@ -42,7 +42,7 @@ export default function HomeTab() {
           marginLeft: 15
         },
         headerRight: () => !fullscreen && (
-          <TouchableOpacity onPress={() => navigation.navigate({ name: 'Cart' })}>
+          <TouchableOpacity activeOpacity={0.8} onPress={() => navigation.navigate({ name: 'Cart' })}>
             <View style={style.cartButtonArea(route.name === 'Product' ? '#090F2C' : '#FFF')}>
               <Text style={style.cartButtonText(route.name === 'Product' ? '#FFF' : '#090F2C')}>{state.totalProducts}</Text>
             </View>

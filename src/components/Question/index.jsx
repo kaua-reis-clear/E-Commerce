@@ -53,7 +53,7 @@ export default function Question({question}) {
             )))}
           </View>
         </View>
-        <TouchableOpacity style={style.viewMoreArea} onPress={() => setViewMore(false)}>
+        <TouchableOpacity activeOpacity={0.8} style={style.viewMoreArea} onPress={() => setViewMore(false)}>
           <Text style={style.viewMore}>Ocultar respostas</Text>
         </TouchableOpacity>
       </>
@@ -62,7 +62,7 @@ export default function Question({question}) {
   }
 
   return (
-    <TouchableOpacity style={style.questionArea} key={question.id}>
+    <TouchableOpacity activeOpacity={0.8} style={style.questionArea} key={question.id}>
       <View style={style.row}>
         <Text style={style.username()}>{question.username}</Text>
         <View style={style.dot()}/>
@@ -84,7 +84,7 @@ export default function Question({question}) {
               <Text style={style.description(true)}>{question.answers[0]?.description}</Text>
             </View>
           </View>
-          <TouchableOpacity style={style.viewMoreArea} onPress={() => setViewMore(true)}>
+          <TouchableOpacity activeOpacity={0.8} style={style.viewMoreArea} onPress={() => setViewMore(true)}>
             <Text style={style.viewMore}>Ver mais {question.answers.length - 1} respostas</Text>
           </TouchableOpacity>
         </>

@@ -41,7 +41,7 @@ export default function Carousel({navigation, multi, data, gallery, setFullscree
         showsHorizontalScrollIndicator={false}
         data={data}
         renderItem={({ item }) => (
-          <TouchableOpacity style={style.productArea} activeOpacity={0.8} onPress={() => gallery ? openFullscreen(item) : navigation.navigate('Product', {product: item})}>
+          <TouchableOpacity activeOpacity={0.8} style={style.productArea}  onPress={() => gallery ? openFullscreen(item) : navigation.navigate('Product', {product: item})}>
             <ScalableImage source={{ uri: gallery ? item : item.images[0] }} width={gallery ? getWidth() : getWidth(multi ? 2 : 30, multi ? '/' : '-')} />
             {!gallery && (
               <View style={style.productInfos(multi)}>

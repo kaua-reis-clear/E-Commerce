@@ -5,7 +5,7 @@ import style from './style';
 
 export default function Review({review}) {
   return (
-    <TouchableOpacity style={style.reviewArea} key={review.id}>
+    <TouchableOpacity activeOpacity={0.8} style={style.reviewArea} key={review.id}>
       <View style={style.row}>
         <Stars length={5} rating={review.rating} size={15} color='#FFF' />
         <View style={style.dot}/>
