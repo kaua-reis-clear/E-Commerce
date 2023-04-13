@@ -37,7 +37,9 @@ export default function Question({question}) {
             {viewMore && (question.answers.map((answer, index) => (
               <View style={style.answerArea} key={answer.id} onLayout={index ==(question.answers.length -1 ) ? getLastAnswerHeight : null}>
                 <View style={style.answerLineArea}>
-                  <View style={style.answerLine}></View>
+                  {lineHeight > 0 && (
+                    <View style={style.answerLine}></View>
+                  )}
                 </View>
                 <View style={style.answerInfos}>
                   <View style={style.row}>

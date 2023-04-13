@@ -1,7 +1,7 @@
 import 'react-native-gesture-handler';
 import MainNavigator from './src/routes/MainNavigator';
 import { NavigationContainer } from '@react-navigation/native';
-import ECommerceProvider from './src/contexts/StoreContext'; 
+import ECommerceProvider from './src/contexts/ECommerceContext'; 
 import { StatusBar } from 'expo-status-bar';
 
 export default function App() {

@@ -3,7 +3,7 @@ import { View, FlatList, Text, TouchableOpacity } from 'react-native';
 import style from './style';
 import { ScalableImage, IndexIndicator, Stars } from '../'
 import { getWidth, toReal } from '../../utils';
-import { ECommerceContext } from '../../contexts/StoreContext';
+import { ECommerceContext } from '../../contexts/ECommerceContext';
 
 export default function Carousel({navigation, multi, data, gallery, setFullscreen, setImage, ...props}) {
   const [current, setCurrent] = useState(0);

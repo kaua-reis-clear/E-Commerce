@@ -4,7 +4,7 @@ import { Home, Product, Cart } from '../../../screens'
 import { TouchableOpacity } from 'react-native';
 import { AntDesign, Ionicons } from '@expo/vector-icons'
 import * as NavigationBar from 'expo-navigation-bar';
-import { ECommerceContext } from '../../../contexts/StoreContext';
+import { ECommerceContext } from '../../../contexts/ECommerceContext';
 
 export default function HomeTab() {
   const Stack = createStackNavigator();
@@ -17,7 +17,7 @@ export default function HomeTab() {
         headerStyle: {
           height: 95,
           backgroundColor: '#080808',
-          shadowColor: 'transparent'
+          shadowColor: 'transparent',
         },
         headerTransparent: route.name === 'Product' ? fullscreen ? false : true : false,
         headerTitle: 'WORLD CELL',

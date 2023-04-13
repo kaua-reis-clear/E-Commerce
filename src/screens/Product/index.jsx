@@ -1,10 +1,10 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { View, Text, ScrollView, TouchableOpacity, FlatList, TouchableWithoutFeedback } from 'react-native';
+import { View, Text, ScrollView, TouchableOpacity, FlatList } from 'react-native';
 import style from './style';
 import { Carousel, Stars, CartPlusIcon, DiscountIcon, FullscreenModal, ScalableImage, BottomSheet, Review, Question } from '../../components';
 import { Ionicons, AntDesign, MaterialCommunityIcons, Feather, MaterialIcons } from '@expo/vector-icons';
 import { getWidth, toReal } from '../../utils';
-import { ECommerceContext } from '../../contexts/StoreContext';
+import { ECommerceContext } from '../../contexts/ECommerceContext';
 import { sellers, productDetails, reviews, questions } from '../../mock';
 
 export default function Product({route}) {
@@ -12,7 +12,7 @@ export default function Product({route}) {
   const seller = sellers.find(seller => seller.id == product.sellerId);
   const [favorited, setFavorited] = useState(false);
   const [image, setImage] = useState(null);
-  const { fullscreen, setFullscreen, showModal, setShowModal } = useContext(ECommerceContext);
+  const { fullscreen, setFullscreen, setShowModal } = useContext(ECommerceContext);
 
   useEffect(() => {
     setShowModal(false)

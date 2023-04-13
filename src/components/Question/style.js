@@ -59,11 +59,12 @@ const style = StyleSheet.create({
   answerLineArea: {
     height: '100%',
     marginHorizontal: 5,
-    marginTop: 5
+    marginTop: 5,
+    width: 20,
   },
   answerLine: {
+    width: '100%',
     height: 12,
-    width: 20,
     borderLeftWidth: 1,
     borderBottomWidth: 1,
     borderColor: '#AAA'
