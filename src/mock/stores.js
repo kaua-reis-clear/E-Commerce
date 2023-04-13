@@ -1,4 +1,4 @@
-const sellers = [
+const stores = [
   {
     id: 1,
     name: 'My Cell',
@@ -26,4 +26,4 @@ const sellers = [
   },
 ];
 
-export default sellers;
+export default stores;

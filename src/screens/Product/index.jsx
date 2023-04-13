@@ -5,11 +5,11 @@ import { Carousel, Stars, CartPlusIcon, DiscountIcon, FullscreenModal, ScalableI
 import { Ionicons, AntDesign, MaterialCommunityIcons, Feather, MaterialIcons } from '@expo/vector-icons';
 import { getWidth, toReal } from '../../utils';
 import { ECommerceContext, CartContext } from '../../contexts';
-import { sellers, productDetails, reviews, questions } from '../../mock';
+import { stores, productDetails, reviews, questions } from '../../mock';
 
 export default function Product({route}) {
   const product = route.params.product;
-  const seller = sellers.find(seller => seller.id == product.sellerId);
+  const store = stores.find(store => store.id == product.storeId);
   const [favorited, setFavorited] = useState(false);
   const [image, setImage] = useState(null);
   const { fullscreen, setFullscreen, setShowModal } = useContext(ECommerceContext);
@@ -74,22 +74,22 @@ export default function Product({route}) {
               <MaterialCommunityIcons name={product.freeDelivery ? 'truck-check' : 'truck-delivery'} size={35} color={product.freeDelivery ? '#007AFF' : '#FFF'} />
               <Text style={style.delivery(product.freeDelivery)}>{product.freeDelivery ? 'Frete Grátis' : 'R$ 15,00 de frete'}</Text>
             </View>
-          <TouchableOpacity activeOpacity={0.8} style={[style.row('flex-start', 'center'), style.sellerArea]} >
-            <ScalableImage source={{uri: 'https://cdn-icons-png.flaticon.com/512/5231/5231019.png'}} width={60} style={style.sellerImage}/>
-            <View style={style.sellerInfos}>
-              <Text style={style.sellerName}>My Cell</Text>
+          <TouchableOpacity activeOpacity={0.8} style={[style.row('flex-start', 'center'), style.storeArea]} >
+            <ScalableImage source={{uri: 'https://cdn-icons-png.flaticon.com/512/5231/5231019.png'}} width={60} style={style.storeImage}/>
+            <View style={style.storeInfos}>
+              <Text style={style.storeName}>My Cell</Text>
               <View style={style.row('space-between')}>
                 <View style={style.row('space-between')}>
                 <MaterialCommunityIcons name='package-variant' size={getWidth(22, '/')} color='#007AFF' />
-                  <Text style={style.sellerTotalSales}>{seller.totalSales} vendas</Text>
+                  <Text style={style.storeTotalSales}>{store.totalSales} vendas</Text>
                 </View>
                 <View style={style.row('space-between')}>
-                  <Stars length={5} rating={seller.rating} size={getWidth(26, '/')} color='#007AFF'/>
-                  <Text style={style.sellerRating}>{seller.rating.toFixed(1)}</Text>
+                  <Stars length={5} rating={store.rating} size={getWidth(26, '/')} color='#007AFF'/>
+                  <Text style={style.storeRating}>{store.rating.toFixed(1)}</Text>
                 </View>
                 <View style={style.row('space-between')}>
                   <Ionicons name='location-sharp' size={getWidth(22, '/')} color='#007AFF' />
-                  <Text style={style.sellerLocation}>{seller.location}</Text>
+                  <Text style={style.storeLocation}>{store.location}</Text>
                 </View>
               </View>
             </View>

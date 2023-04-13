@@ -75,32 +75,32 @@ const style = StyleSheet.create({
     fontSize: 15,
     color: '#FFF'
   },
-  sellerArea: {
+  storeArea: {
     marginTop: 20
   },
-  sellerImage: {
+  storeImage: {
     borderRadius: 30,
     marginRight: 5
   },
-  sellerInfos: {
+  storeInfos: {
     flex: 1
   },
-  sellerName: {
+  storeName: {
     fontSize: 20,
     color: '#FFF',
     marginBottom: 5,
   },
-  sellerTotalSales: {
+  storeTotalSales: {
     fontSize: 12,
     color: '#FFF',
     marginLeft: 2,
   },
-  sellerRating: {
+  storeRating: {
     fontSize: 12,
     color: '#FFF',
     marginLeft: 2
   },
-  sellerLocation: {
+  storeLocation: {
     fontSize: 12,
     color: '#FFF',
     marginLeft: 2

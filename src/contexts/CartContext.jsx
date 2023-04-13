@@ -8,7 +8,10 @@ export default function CartProvider({children}) {
   const [state, dispatch] = useReducer(cartReducer, INITIAL_STATE);
 
   function addToCart(product) {
-    const updatedCart = state.products.concat(product);
+    const updatedCart = state.products.concat({
+      model: product.model,
+      image: product.images[0],
+    });
 
     updateTotalProducts(updatedCart);
     updateTotalPrice(updatedCart);

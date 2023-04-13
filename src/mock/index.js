@@ -1,7 +1,7 @@
 import products from "./products";
-import sellers from "./sellers";
+import stores from "./stores";
 import productDetails from "./productDetails";
 import reviews from "./reviews";
 import questions from "./questions";
 
-export { products, sellers, productDetails, reviews, questions };
+export { products, stores, productDetails, reviews, questions };
