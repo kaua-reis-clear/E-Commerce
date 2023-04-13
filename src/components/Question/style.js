@@ -40,6 +40,15 @@ const style = StyleSheet.create({
     left: 6.1,
     height: lineHeight
   }),
+  viewMoreArea: {
+    paddingVertical: 5
+  },
+  viewMore: {
+    fontSize: 12,
+    color: '#AAA',
+    fontWeight: 'bold',
+    marginLeft: 30
+  },
   answerArea: {
     flexDirection: 'row',
     alignItems: 'center',
