@@ -2,7 +2,8 @@ import React, { memo } from 'react';
 import { View, ScrollView, TouchableOpacity, Text } from 'react-native';
 import style from './style';
 import { MaterialCommunityIcons, Ionicons, AntDesign } from '@expo/vector-icons';
-import { MotorolaLogo, SamsungLogo } from '../'
+import MotorolaLogo from '../MotorolaLogo';
+import SamsungLogo from '../SamsungLogo';
 
 function Filters() {
   return (

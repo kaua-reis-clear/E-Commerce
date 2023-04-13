@@ -1,9 +1,11 @@
 import React, { useState, useRef, useContext, memo } from 'react';
 import { View, FlatList, Text, TouchableOpacity } from 'react-native';
 import style from './style';
-import { ScalableImage, IndexIndicator, Stars } from '../'
+import ScalableImage from '../ScalableImage';
+import IndexIndicator from '../IndexIndicator';
+import Stars from '../Stars';
 import { getWidth, toReal } from '../../utils';
-import { ECommerceContext } from '../../contexts/ECommerceContext';
+import { ECommerceContext } from '../../contexts';
 
 function Carousel({navigation, multi, data, gallery, setFullscreen, setImage, ...props}) {
   const [current, setCurrent] = useState(0);

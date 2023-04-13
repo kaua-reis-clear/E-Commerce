@@ -1,7 +1,7 @@
-import React, { useRef, useState, useEffect, useCallback } from 'react';
+import React, { useRef, useState } from 'react';
 import style from './style';
 import { View, Animated } from 'react-native'
-import { ScalableImage } from '../index';
+import ScalableImage from '../ScalableImage'
 import { getWidth } from '../../utils';
 import { PinchGestureHandler, PanGestureHandler, State } from 'react-native-gesture-handler';
 

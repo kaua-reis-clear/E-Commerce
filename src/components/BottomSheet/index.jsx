@@ -3,7 +3,7 @@ import { Animated, View } from 'react-native';
 import { PanGestureHandler } from 'react-native-gesture-handler';
 import { getHeight, getWidth } from '../../utils';
 import style from './style';
-import { ECommerceContext } from '../../contexts/ECommerceContext';
+import { ECommerceContext } from '../../contexts';
 
 function BottomSheet({children}) {
   const { showModal, setShowModal } = useContext(ECommerceContext);

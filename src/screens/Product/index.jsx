@@ -4,7 +4,7 @@ import style from './style';
 import { Carousel, Stars, CartPlusIcon, DiscountIcon, FullscreenModal, ScalableImage, BottomSheet, Review, Question } from '../../components';
 import { Ionicons, AntDesign, MaterialCommunityIcons, Feather, MaterialIcons } from '@expo/vector-icons';
 import { getWidth, toReal } from '../../utils';
-import { ECommerceContext } from '../../contexts/ECommerceContext';
+import { ECommerceContext, CartContext } from '../../contexts';
 import { sellers, productDetails, reviews, questions } from '../../mock';
 
 export default function Product({route}) {
@@ -12,7 +12,8 @@ export default function Product({route}) {
   const seller = sellers.find(seller => seller.id == product.sellerId);
   const [favorited, setFavorited] = useState(false);
   const [image, setImage] = useState(null);
-  const { fullscreen, setFullscreen, setShowModal, addToCart } = useContext(ECommerceContext);
+  const { fullscreen, setFullscreen, setShowModal } = useContext(ECommerceContext);
+  const { addToCart } = useContext(CartContext);
 
   useEffect(() => {
     setShowModal(false)

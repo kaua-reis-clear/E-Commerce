@@ -4,12 +4,13 @@ import { Home, Product, Cart } from '../../../../screens'
 import { Text, TouchableOpacity, View } from 'react-native';
 import { AntDesign, Ionicons } from '@expo/vector-icons'
 import * as NavigationBar from 'expo-navigation-bar';
-import { ECommerceContext } from '../../../../contexts/ECommerceContext';
+import { ECommerceContext, CartContext } from '../../../../contexts';
 import style from './style';
 
 export default function HomeTab() {
   const Stack = createStackNavigator();
-  const { fullscreen, setFullscreen, state } = useContext(ECommerceContext)
+  const { fullscreen, setFullscreen } = useContext(ECommerceContext)
+  const { state } = useContext(CartContext)
   
   return (
     <Stack.Navigator screenOptions={({route, navigation}) => {

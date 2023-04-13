@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import { TouchableOpacity, View, Text } from 'react-native';
-import { Stars } from '../';
+import Stars from '../Stars';
 import style from './style';
 
 function Review({review}) {
