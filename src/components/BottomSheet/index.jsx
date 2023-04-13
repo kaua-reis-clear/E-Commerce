@@ -1,11 +1,11 @@
-import React, { useEffect, useRef, useState, useContext } from 'react';
+import React, { useEffect, useRef, useState, useContext, memo } from 'react';
 import { Animated, View } from 'react-native';
 import { PanGestureHandler } from 'react-native-gesture-handler';
 import { getHeight, getWidth } from '../../utils';
 import style from './style';
 import { ECommerceContext } from '../../contexts/ECommerceContext';
 
-export default function BottomSheet({children}) {
+function BottomSheet({children}) {
   const { showModal, setShowModal } = useContext(ECommerceContext);
   const bottomSheetHeight = getHeight(0.75, '*');
   const bottom = useRef(new Animated.Value(-bottomSheetHeight)).current;
@@ -57,3 +57,5 @@ export default function BottomSheet({children}) {
     </Animated.View>
   );
 }
+
+export default memo(BottomSheet);

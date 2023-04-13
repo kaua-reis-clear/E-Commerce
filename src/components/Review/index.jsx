@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { TouchableOpacity, View, Text } from 'react-native';
 import { Stars } from '../';
 import style from './style';
 
-export default function Review({review}) {
+function Review({review}) {
   return (
     <TouchableOpacity activeOpacity={0.8} style={style.reviewArea} key={review.id}>
       <View style={style.row}>
@@ -20,3 +20,4 @@ export default function Review({review}) {
   );
 }
 
+export default memo(Review);

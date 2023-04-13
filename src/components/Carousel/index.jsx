@@ -1,11 +1,11 @@
-import React, { useState, useRef, useContext } from 'react';
+import React, { useState, useRef, useContext, memo } from 'react';
 import { View, FlatList, Text, TouchableOpacity } from 'react-native';
 import style from './style';
 import { ScalableImage, IndexIndicator, Stars } from '../'
 import { getWidth, toReal } from '../../utils';
 import { ECommerceContext } from '../../contexts/ECommerceContext';
 
-export default function Carousel({navigation, multi, data, gallery, setFullscreen, setImage, ...props}) {
+function Carousel({navigation, multi, data, gallery, setFullscreen, setImage, ...props}) {
   const [current, setCurrent] = useState(0);
   const { showModal, setShowModal } = useContext(ECommerceContext);
 
@@ -72,3 +72,4 @@ export default function Carousel({navigation, multi, data, gallery, setFullscree
   );
 }
 
+export default memo(Carousel);

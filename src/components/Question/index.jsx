@@ -1,8 +1,8 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useEffect, memo } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import style from './style';
 
-export default function Question({question}) {
+function Question({question}) {
   const [answersHeight, setAnswersHeight] = useState(null);
   const [lastAnswersHeight, setLastAnswersHeight] = useState(null);
   const [lineHeight, setLineHeight] = useState(0);
@@ -95,3 +95,5 @@ export default function Question({question}) {
     </TouchableOpacity>
   );
 }
+
+export default memo(Question);

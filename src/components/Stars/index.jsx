@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { View } from 'react-native';
 import style from "./style";
 import { FontAwesome } from '@expo/vector-icons';
 
-export default function Stars({length, rating, size, color, ...props}) {
+function Stars({length, rating, size, color, ...props}) {
   function getStars() {
     return Array.from({length}).map((_, index) => {
       if (index + 1 <= rating) {
@@ -28,3 +28,5 @@ export default function Stars({length, rating, size, color, ...props}) {
     </View>
   );
 }
+
+export default memo(Stars);

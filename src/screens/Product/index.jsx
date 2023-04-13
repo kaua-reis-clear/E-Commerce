@@ -12,7 +12,7 @@ export default function Product({route}) {
   const seller = sellers.find(seller => seller.id == product.sellerId);
   const [favorited, setFavorited] = useState(false);
   const [image, setImage] = useState(null);
-  const { fullscreen, setFullscreen, setShowModal, addToCart, removeFromCart } = useContext(ECommerceContext);
+  const { fullscreen, setFullscreen, setShowModal, addToCart } = useContext(ECommerceContext);
 
   useEffect(() => {
     setShowModal(false)

@@ -1,7 +1,7 @@
-import * as React from "react"
+import React, { memo } from "react"
 import Svg, { Path } from "react-native-svg"
 
-export default function DiscountIcon({size, color, ...props}) {
+function DiscountIcon({size, color, ...props}) {
   return (
     <Svg
       xmlns="http://www.w3.org/2000/svg"
@@ -22,3 +22,5 @@ export default function DiscountIcon({size, color, ...props}) {
     </Svg>
   )
 }
+
+export default memo(DiscountIcon);

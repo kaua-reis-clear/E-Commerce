@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, memo } from 'react';
 import { Image, Animated } from 'react-native';
 import style from './style';
 
-export default function ScalableImage({source, width, handleError, height, ...props}) {
+function ScalableImage({source, width, handleError, height, ...props}) {
   const [dim, setDim] = useState(null);
 
   let isMounted = true;
@@ -50,3 +50,5 @@ export default function ScalableImage({source, width, handleError, height, ...pr
   }
   return null;
 }
+
+export default memo(ScalableImage);

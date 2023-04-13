@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { View, ScrollView, TouchableOpacity, Text } from 'react-native';
 import style from './style';
 import { MaterialCommunityIcons, Ionicons, AntDesign } from '@expo/vector-icons';
 import { MotorolaLogo, SamsungLogo } from '../'
 
-export default function Filters() {
+function Filters() {
   return (
     <View style={style.filtersArea}>
       <ScrollView horizontal>
@@ -36,3 +36,5 @@ export default function Filters() {
     </View>
   )
 }
+
+export default memo(Filters);

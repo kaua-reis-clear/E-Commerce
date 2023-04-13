@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { AntDesign } from '@expo/vector-icons';
 import style from './style';
 import { Text, View } from 'react-native';
 
-export default function CartPlusIcon({size, color}) {
+function CartPlusIcon({size, color}) {
   return (
     <View>
       <AntDesign name='shoppingcart' size={size} color={color} />
@@ -11,3 +11,5 @@ export default function CartPlusIcon({size, color}) {
     </View>
   )
 }
+
+export default memo(CartPlusIcon);
