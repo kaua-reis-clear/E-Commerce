@@ -34,9 +34,9 @@ export default function HomeTab() {
           <TouchableOpacity activeOpacity={0.8}>
             <AntDesign name='search1' size={38} color='white' />
           </TouchableOpacity>
-        ) : route.name === 'Product' ? (
+        ) : (route.name === 'Product' || route.name === 'Cart') ? (
           <TouchableOpacity activeOpacity={0.8} onPress={() => fullscreen ? setFullscreen(false) : navigation.goBack()}>
-            <Ionicons name={fullscreen ? 'close' : 'arrow-back'} size={38} color={fullscreen ? '#FFF' : '#090F2C'} />
+            <Ionicons name={fullscreen ? 'close' : 'arrow-back'} size={38} color={route.name === 'Cart' ? '#FFF' : fullscreen ? '#FFF' : '#090F2C'} />
           </TouchableOpacity>
         ) : null,
         headerLeftContainerStyle: {
@@ -44,9 +44,11 @@ export default function HomeTab() {
         },
         headerRight: () => !fullscreen && (
           <TouchableOpacity activeOpacity={0.8} onPress={() => navigation.navigate({ name: 'Cart' })}>
-            <View style={style.cartButtonArea(route.name === 'Product' ? '#090F2C' : '#FFF')}>
-              <Text style={style.cartButtonText(route.name === 'Product' ? '#FFF' : '#090F2C')}>{state.totalProducts}</Text>
-            </View>
+            {state.totalProducts > 0 && (
+              <View style={style.cartButtonArea(route.name === 'Product' ? '#090F2C' : '#FFF')}>
+                <Text style={style.cartButtonText(route.name === 'Product' ? '#FFF' : '#090F2C')}>{state.totalProducts}</Text>
+              </View>
+            )}
             <AntDesign name='shoppingcart' size={40} color={route.name === 'Product' ? '#090F2C' : '#FFF'} />
           </TouchableOpacity>
         ),

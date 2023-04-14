@@ -75,9 +75,9 @@ export default function Product({route}) {
               <Text style={style.delivery(product.freeDelivery)}>{product.freeDelivery ? 'Frete Grátis' : 'R$ 15,00 de frete'}</Text>
             </View>
           <TouchableOpacity activeOpacity={0.8} style={[style.row('flex-start', 'center'), style.storeArea]} >
-            <ScalableImage source={{uri: 'https://cdn-icons-png.flaticon.com/512/5231/5231019.png'}} width={60} style={style.storeImage}/>
+            <ScalableImage source={{uri: store.avatar}} width={60} style={style.storeImage}/>
             <View style={style.storeInfos}>
-              <Text style={style.storeName}>My Cell</Text>
+              <Text style={style.storeName}>{store.name}</Text>
               <View style={style.row('space-between')}>
                 <View style={style.row('space-between')}>
                 <MaterialCommunityIcons name='package-variant' size={getWidth(22, '/')} color='#007AFF' />

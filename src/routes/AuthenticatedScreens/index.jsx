@@ -14,7 +14,7 @@ export default function AuthenticatedScreens() {
       tabBarStyle: {
         height: 65,
         backgroundColor: '#080808',
-        display: getFocusedRouteNameFromRoute(route) === 'Product' ? 'none' : 'flex'
+        display: (getFocusedRouteNameFromRoute(route) === 'Product' || getFocusedRouteNameFromRoute(route) === 'Cart') ? 'none' : 'flex'
       },
       tabBarIcon: ({focused}) => {
         let color = focused ? '#007AFF' : 'white';

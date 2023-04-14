@@ -9,8 +9,13 @@ export default function CartProvider({children}) {
 
   function addToCart(product) {
     const updatedCart = state.products.concat({
+      id: product.id,
       model: product.model,
       image: product.images[0],
+      price: product.price,
+      oldPrice: product?.oldPrice,
+      freeDelivery: product.freeDelivery,
+      total: 1,
     });
 
     updateTotalProducts(updatedCart);
