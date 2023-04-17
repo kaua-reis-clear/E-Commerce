@@ -40,7 +40,31 @@ export const INITIAL_STATE = {products: [
         total: 1
       },
     ]
-  }
+  },
+  {
+    storeId: 3,
+    storeName: 'My Cell',
+    location: 'International',
+    products: [
+      {
+        id: 1,
+        model: 'Galaxy A54 5G',
+        image: 'https://images.samsung.com/is/image/samsung/p6pim/br/sm-a546elgdzto/gallery/br-galaxy-a54-5g-sm-a546-sm-a546elgdzto-535806788?$730_584_PNG$',
+        price: 2609.10,
+        oldPrice: 3399,
+        freeDelivery: true,
+        total: 1,
+      },
+      {
+        id: 2,
+        model: 'Galaxy A13',
+        image: 'https://images.samsung.com/is/image/samsung/p6pim/br/sm-a135mlbjzto/gallery/br-galaxy-a13-sm-a135-sm-a135mlbjzto-531826439?$730_584_PNG$',
+        price: 1439.10,
+        freeDelivery: false,
+        total: 1,
+      }
+    ]
+  },
 ], totalPrice: 0, totalProducts: 0}
 
 export default function cartReducer(state = INITIAL_STATE, action) {

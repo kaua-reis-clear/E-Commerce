@@ -132,7 +132,44 @@ const style = StyleSheet.create({
     fontWeight: 'bold',
     color: '#FFF',
     marginHorizontal: 10
-  }
+  },
+  footer: {
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingBottom: 20,
+    paddingTop: 10
+  },
+  row: {
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
+  all: {
+    fontSize: 14,
+    color: '#FFF'
+  },
+  total: {
+    fontSize: 14,
+    color: '#FFF',
+    fontWeight: 'bold'
+  },
+  totalValue: {
+    fontSize: 14,
+    color: '#007AFF',
+    fontWeight: 'bold'
+  },
+  buyButton: {
+    alignItems: 'center',
+    backgroundColor: '#007AFF',
+    padding: 10,
+    borderRadius: 10,
+  },
+  buyText: {
+    fontSize: 14,
+    fontWeight: 'bold',
+    color: '#FFF'
+  },
 })
 
 export default style;

@@ -6,12 +6,12 @@ import { DiscountIcon, ScalableImage } from '../../components'
 import { Ionicons, MaterialCommunityIcons, FontAwesome } from '@expo/vector-icons';
 import { getWidth, toReal } from '../../utils';
 
-function ProductItem({product, selectedAll}) {
+function ProductItem({product, selectedAllFromStore}) {
   const [selected, setSelected] = useState(false);
 
   useEffect(() => {
-    setSelected(selectedAll);
-  }, [selectedAll]);
+    setSelected(selectedAllFromStore);
+  }, [selectedAllFromStore]);
 
   return (
     <View style={style.productArea}>
@@ -48,8 +48,12 @@ function ProductItem({product, selectedAll}) {
   );
 }
 
-function StoreItem({store}) {
+function StoreItem({store, selectedAll}) {
   const [selected, setSelected] = useState(true);
+
+  useEffect(() => {
+    setSelected(selectedAll);
+  }, [selectedAll]);
 
   return (
     <View style={style.storeArea}>
@@ -70,7 +74,7 @@ function StoreItem({store}) {
       <FlatList
       data={store.products}
       ItemSeparatorComponent={<View style={style.separatorProduct} />}
-      renderItem={({item}) => <ProductItem product={item} selectedAll={selected}/>}
+      renderItem={({item}) => <ProductItem product={item} selectedAllFromStore={selected}/>}
       keyExtractor={item => item.id}
       />
     </View>
@@ -79,15 +83,35 @@ function StoreItem({store}) {
 
 export default function Cart() {
   const { state, addToCart, removeFromCart } = useContext(CartContext);
+  const [selected, setSelected] = useState(true);
 
   return (
     <View style={style.container}>
       <FlatList
       data={state.products}
       ItemSeparatorComponent={<View style={style.separatorStore}/>}
-      renderItem={({item}) => <StoreItem store={item} />}
+      renderItem={({item}) => <StoreItem store={item} selectedAll={selected} />}
       keyExtractor={store => store.storeId}
       />
+      <View style={style.footer}>
+        <TouchableOpacity activeOpacity={0.8} style={style.row}>
+          <View style={style.radioArea}>
+            <TouchableOpacity activeOpacity={0.8} style={style.radio(selected)} onPress={() => setSelected(current => !current)}>
+              {selected && (
+                <FontAwesome name='check' size={20} color='#FFF' />
+              )}
+            </TouchableOpacity>
+          </View>
+          <Text style={style.all}>Tudo</Text>
+        </TouchableOpacity>
+        <View style={style.row}>
+          <Text style={style.total}>Total: </Text>
+          <Text style={style.totalValue}>R$ 5000,00</Text>
+        </View>
+        <TouchableOpacity style={style.buyButton}>
+          <Text style={style.buyText}>Continuar(2)</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }

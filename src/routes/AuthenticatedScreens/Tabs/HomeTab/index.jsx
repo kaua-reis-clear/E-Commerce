@@ -14,7 +14,7 @@ export default function HomeTab() {
   
   return (
     <Stack.Navigator screenOptions={({route, navigation}) => {
-      NavigationBar.setBackgroundColorAsync(route.name === 'Product' ? fullscreen ? '#080808' : '#090F2C' : '#080808');
+      NavigationBar.setBackgroundColorAsync((route.name === 'Product' || route.name === 'Cart') ? fullscreen ? '#080808' : '#090F2C' : '#080808');
       return ({
         headerStyle: {
           height: 95,
